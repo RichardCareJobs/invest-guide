@@ -1,0 +1,5 @@
+node_modules
+.next
+*.sqlite
+coverage
+npm-debug.log*
