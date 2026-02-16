@@ -17,60 +17,32 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      PAGES_BASE_PATH: /invest-guide
+      NEXT_OUTPUT_MODE: export
+      GITHUB_ACTIONS: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Detect Next.js app location
-        id: app-path
-        run: |
-          if [ -d "apps/web" ]; then
-            echo "app_dir=apps/web" >> "$GITHUB_OUTPUT"
-            echo "has_workspace=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "app_dir=." >> "$GITHUB_OUTPUT"
-            echo "has_workspace=false" >> "$GITHUB_OUTPUT"
-          fi
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
 
-      - name: Install dependencies (workspace)
-        if: steps.app-path.outputs.has_workspace == 'true'
+      - name: Install dependencies
         run: npm install
 
-      - name: Install dependencies (single app)
-        if: steps.app-path.outputs.has_workspace != 'true'
-        run: npm install
-        working-directory: ${{ steps.app-path.outputs.app_dir }}
-
-      - name: Build static export (workspace)
-        if: steps.app-path.outputs.has_workspace == 'true'
-        env:
-          PAGES_BASE_PATH: /invest-guide
-          NEXT_OUTPUT_MODE: export
-          GITHUB_ACTIONS: true
-        run: npm run build -w apps/web
-
-      - name: Build static export (single app)
-        if: steps.app-path.outputs.has_workspace != 'true'
-        env:
-          PAGES_BASE_PATH: /invest-guide
-          NEXT_OUTPUT_MODE: export
-          GITHUB_ACTIONS: true
+      - name: Build static export
         run: npm run build
-        working-directory: ${{ steps.app-path.outputs.app_dir }}
 
       - name: Add .nojekyll
-        run: touch "${{ steps.app-path.outputs.app_dir }}/out/.nojekyll"
+        run: touch apps/web/out/.nojekyll
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ steps.app-path.outputs.app_dir }}/out
+          path: apps/web/out
 
   deploy:
     needs: build
