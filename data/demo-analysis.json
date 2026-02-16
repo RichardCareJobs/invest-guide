@@ -1,0 +1,99 @@
+{
+  "disclaimer": "Not financial advice. High risk. Past performance ≠ future results.",
+  "all": [
+    {
+      "code": "CBA",
+      "companyName": "Commonwealth Bank of Australia",
+      "riskScore": 38,
+      "rewardScore": 44,
+      "confidence": "Medium",
+      "volatility30d": 14.2,
+      "volatility90d": 18.1,
+      "maxDrawdown90d": -8.6,
+      "momentum30d": 2.1,
+      "momentum90d": 3.7,
+      "liquidityProxy": 180000000,
+      "catalysts": ["guidance upgrade"],
+      "redFlags": [],
+      "headlines": [
+        { "label": "CBA quarterly update", "value": "Public investor update", "sourceUrl": "https://www.commbank.com.au/about-us/investors.html" }
+      ],
+      "sources": [
+        { "label": "Investor relations", "value": "Company IR page", "sourceUrl": "https://www.commbank.com.au/about-us/investors.html" }
+      ],
+      "dataCompleteness": [
+        { "label": "Market data (OHLCV)", "available": true },
+        { "label": "Google News RSS", "available": true },
+        { "label": "IR document/report", "available": true }
+      ],
+      "whyRisk": ["30d volatility: 14.2%", "90d max drawdown: -8.6%", "Red flag signals found: 0"],
+      "whyReward": ["30d momentum: 2.1%", "Catalyst keyword count: 1", "Headline sentiment proxy: 1"]
+    },
+    {
+      "code": "BHP",
+      "companyName": "BHP Group",
+      "riskScore": 49,
+      "rewardScore": 52,
+      "confidence": "Medium",
+      "volatility30d": 19.4,
+      "volatility90d": 23.2,
+      "maxDrawdown90d": -12.5,
+      "momentum30d": 4.2,
+      "momentum90d": 8.4,
+      "liquidityProxy": 155000000,
+      "catalysts": ["contract", "approval"],
+      "redFlags": ["capital raising"],
+      "headlines": [
+        { "label": "BHP annual report released", "value": "Public PDF", "sourceUrl": "https://www.bhp.com/investors/annual-reporting" }
+      ],
+      "sources": [
+        { "label": "Annual report", "value": "Public filing", "sourceUrl": "https://www.bhp.com/investors/annual-reporting" }
+      ],
+      "dataCompleteness": [
+        { "label": "Market data (OHLCV)", "available": true },
+        { "label": "Google News RSS", "available": true },
+        { "label": "IR document/report", "available": true }
+      ],
+      "whyRisk": ["30d volatility: 19.4%", "90d max drawdown: -12.5%", "Red flag signals found: 1"],
+      "whyReward": ["30d momentum: 4.2%", "Catalyst keyword count: 2", "Headline sentiment proxy: 1"]
+    },
+    {
+      "code": "CSL",
+      "companyName": "CSL Limited",
+      "riskScore": 45,
+      "rewardScore": 48,
+      "confidence": "Medium",
+      "volatility30d": 17.2,
+      "volatility90d": 21.1,
+      "maxDrawdown90d": -10.3,
+      "momentum30d": 3.0,
+      "momentum90d": 5.1,
+      "liquidityProxy": 125000000,
+      "catalysts": ["new product"],
+      "redFlags": [],
+      "headlines": [
+        { "label": "CSL annual report", "value": "Public report", "sourceUrl": "https://www.csl.com/investors/results-and-presentations" }
+      ],
+      "sources": [
+        { "label": "Results and presentations", "value": "Public materials", "sourceUrl": "https://www.csl.com/investors/results-and-presentations" }
+      ],
+      "dataCompleteness": [
+        { "label": "Market data (OHLCV)", "available": true },
+        { "label": "Google News RSS", "available": true },
+        { "label": "IR document/report", "available": true }
+      ],
+      "whyRisk": ["30d volatility: 17.2%", "90d max drawdown: -10.3%", "Red flag signals found: 0"],
+      "whyReward": ["30d momentum: 3.0%", "Catalyst keyword count: 1", "Headline sentiment proxy: 1"]
+    }
+  ],
+  "doublingRealityCheck": {
+    "requiredReturn": "+100% in ~63 trading days",
+    "note": "Rapid doubling events are rare and usually come with high volatility and significant downside risk.",
+    "frequency": { "checked": 3, "doubled": 0, "frequency": 0 }
+  },
+  "saferAlternatives": [
+    "Cash savings / term deposit (lower volatility, lower expected return)",
+    "Broad diversified ETF (less single-company risk, but still market risk)",
+    "Dollar-cost averaging into diversified exposures"
+  ]
+}

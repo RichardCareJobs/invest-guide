@@ -1,0 +1,14 @@
+{
+  "ASX20": [
+    { "code": "BHP", "companyName": "BHP Group" },
+    { "code": "CBA", "companyName": "Commonwealth Bank of Australia" },
+    { "code": "CSL", "companyName": "CSL Limited" },
+    { "code": "WBC", "companyName": "Westpac Banking Corporation" },
+    { "code": "NAB", "companyName": "National Australia Bank" },
+    { "code": "ANZ", "companyName": "ANZ Group Holdings" },
+    { "code": "WES", "companyName": "Wesfarmers" },
+    { "code": "MQG", "companyName": "Macquarie Group" }
+  ],
+  "ASX50": [],
+  "ASX200": []
+}
